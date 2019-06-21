@@ -1,0 +1,46 @@
+{
+    "simple_finder_pipeline" : [
+
+
+        {
+            "yolo_model_loader":
+            {
+                "model_configuration_file": "/home/ayush/Desktop/Dependencies_Distracted/yolov_tiny_cfg.cfg",
+                "model_weights_file": "/home/ayush/Desktop/Dependencies_Distracted/yolov_tiny.weights",
+                "class_names_file" : "/home/ayush/Desktop/Dependencies_Distracted/obj.names"
+            }
+        },
+        {
+            "yolo_object_finder":
+            {
+                "in_width": 416,
+                "in_height": 416,
+                "confThreshold": 0.1,
+                "nmsThreshold": 0.1
+            }
+        },
+
+        {
+            "draw_yolo_prediction":
+            {
+                "line_thickness": 3,
+                "line_blue": 255,
+                "line_green": 178,
+                "line_red": 50,
+                "label_thickness": 1,
+                "label_blue": 0,
+                "label_green": 0,
+                "label_red": 0
+            }
+        },
+        {
+            "draw_lines":
+            {
+                "line_thickness": 3,
+                "blue": 0,
+                "green": 0,
+                "red": 255
+            }
+        }
+    ]
+}
